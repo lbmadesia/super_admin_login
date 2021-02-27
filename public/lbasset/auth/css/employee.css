@@ -1,0 +1,11 @@
+@charset "UTF-8";
+.admin-auth{
+    width:100;
+    height:100vh;
+    background-color: #F7FAFC;
+}
+
+.form-div{
+    width:720px;
+    height:480px;
+}
