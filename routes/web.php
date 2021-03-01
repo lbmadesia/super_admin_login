@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.admin.auth');
+    return view('auth.auth');
 });
 
-Route::get('/employee', function () {
-    return view('auth.employee.auth');
+Route::get('/login', function () {
+    return view('auth.auth');
 });
