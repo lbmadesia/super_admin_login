@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth.auth');
 });
+Route::get('/employee', function () {
+    return view('auth.auth');
+});
+
+Route::get('/hrm', function () {
+    return view('hrm.index');
+});

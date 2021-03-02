@@ -45,7 +45,7 @@
                 Once you register,you will only access your admin panel from this PC.
                 <i class="fa fa-times-circle close mt-2 text-danger" data-dismiss="alert"></i>
             </div>
-            <form class="admin-form">
+            <form class="admin-form" action="{{ url()->current() }}/hrm" method="GET">
                 @csrf
                 
                 <div class="form-group">
