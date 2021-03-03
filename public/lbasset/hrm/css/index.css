@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.lb-main-page{
+  width:100%;
+  height:auto;
+  background-color: red;
+}
+.left-side{
+    width:250px;
+    min-height:100vh;
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+    top:0px;
+    left:0px;
+}
+.right-side{
+    width: calc(100% - 250px);
+    min-height:100vh;
+    background-color:#00092b;
+    position: absolute;
+    top:0px;
+    right:0px;
+}
+.left-manu a{
+  color: #CB3300;
+}
+
+.left-menu-item {
+  color: #CB3300 !important;
+}
+.collapse-item{
+  font-size: 14px;
+}
+#li-col-0 li,#li-col-1 li,#li-col-2 li,#li-col-3 li,#li-col-4 li,#li-col-5 li,#li-col-6 li{
+  color: #C5721B !important;
+}
+.fullscreen-div{
+  width:30px;
+  height:30px;
+  position: absolute;
+  bottom: 10px;
+  right:10px;
+  background-color: #CB3300;
+  cursor: pointer;
+}
