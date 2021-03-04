@@ -13,17 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.auth');
-});
+Route::get('/','admin@result');
 
-Route::get('/login', function () {
-    return view('auth.auth');
-});
-Route::get('/employee', function () {
-    return view('auth.auth');
-});
-
+// start route access login page for both as super admin and staff 
+Route::get('/login','admin@result');
+Route::get('/signin','admin@result');
+Route::get('/employee','admin@result');
+// end route access login page for both as super admin and staff 
+Route::post('/logindata','auth@adminlogin');
+Route::post('/signindata','auth@stafflogin');
 Route::get('/hrm', function () {
     return view('hrm.index');
+});
+Route::get('/404', function () {
+    return view('notfound');
+});
+Route::get('/error', function () {
+    return view('error');
 });

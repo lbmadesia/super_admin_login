@@ -1,3 +1,4 @@
+
 @extends('../default')
  {{-- title --}}
 @section('title')
@@ -11,6 +12,7 @@
 {{-- script --}}
 @section('script')
     <script src="{{ asset('lbasset/auth/admin.js') }}?cache=<?php echo time();?>"></script>
+    <script src="{{ asset('lbasset/auth/js/index.js') }}?cache=<?php echo time();?>"></script>
 @endsection
 {{-- header --}}
 @section('header')
@@ -39,23 +41,53 @@
 
       <div class="tab-content py-4">
         <div id="admin" class="active tab-pane">
-            <div class="alert alert-warning d-none">
+            {{-- start admin form --}}
+            @if(!session()->has('admin'))
+            <div class="alert alert-warning personalpc_title">
                 <i class="fa fa-warning text-dark"></i>
                 Register admin panel from your personal PC.
                 Once you register,you will only access your admin panel from this PC.
                 <i class="fa fa-times-circle close mt-2 text-danger" data-dismiss="alert"></i>
             </div>
-            <form class="admin-form" action="{{ url()->current() }}/hrm" method="GET">
+            <form class="admin-form" action="/logindata" method="POST">
                 @csrf
                 
                 <div class="form-group">
                     <label>ADMIN ID</label>
-                    <input type="email" class="form-control border-0 rounded-0 company-estd" name="adminid" placeholder="admine@gmail.com">
+                    <input  required type="email" class="form-control border-0 rounded-0 company-estd" name="email" placeholder="admine@gmail.com">
                 </div>
 
                 <div class="form-group">
                     <label>PASSWORD</label>
-                    <input type="password" class="form-control border-0 rounded-0 company-password" name="password" placeholder="******">
+                    <input  required type="password" class="form-control border-0 rounded-0 company-password" name="password" minlength="4" placeholder="******">
+                </div>
+                <div class="form-group mt-4">
+
+                    <button class="btn btn-danger rounded-0 float-left">
+                    <i class="fa fa-sign-in"></i>
+                    Register
+                    </button>
+
+                    <div class="preloader">
+                        <div class="spinner"></div>
+                        <div class="spinner-2"></div>
+                    </div>
+                </div>
+            </form>
+           @else
+            {{-- end admin form --}}
+            {{-- start staff form --}}
+            <form class="admin-form" action="/signindata" method="POST">
+                @csrf
+                
+                <div class="form-group">
+                    <label>ADMIN ID</label>
+                    <input  required type="email" class="form-control border-0 rounded-0 company-estd" name="email" placeholder="admine@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label>PASSWORD</label>
+                    <input  required type="password" class="form-control border-0 rounded-0 company-password" name="password" placeholder="******">
                 </div>
 
                 <div class="form-group mt-4">
@@ -71,18 +103,20 @@
                     </div>
                 </div>
             </form>
+            @endif
+            {{-- end staff form --}}
         </div>
 
         <div id="employee" class="tab-pane fade">
             <form class="employee-form">
                 <div class="form-group">
                     <label>USERNAME</label>
-                    <input type="email" class="form-control border-0 rounded-0" name="username" placeholder="employee@gmail.com">
+                    <input  required type="email" class="form-control border-0 rounded-0" name="username" placeholder="employee@gmail.com">
                 </div>
 
                 <div class="form-group">
                     <label>PASSWORD</label>
-                    <input type="password" class="form-control border-0 rounded-0" name="password" placeholder="******">
+                    <input  required type="password" class="form-control border-0 rounded-0" name="password" placeholder="******">
                 </div>
 
                 <div class="form-group mt-4">

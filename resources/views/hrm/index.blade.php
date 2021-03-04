@@ -1,3 +1,8 @@
+@if(!session()->has('authenticationiottech'))
+<script>
+    window.location = "/";
+</script>
+@endif
 @extends('../default')
  {{-- title --}}
 @section('title')
@@ -28,7 +33,7 @@
             <ul class="list-group">
                 <li class="list-group-item  border-0 bg-light left-menu-item d-flex justify-content-between align-items-left"><span><i class="fa fa-dashboard" aria-hidden="true"></i> <span class="textt-hide">&nbsp;&nbsp;Dashboard</span></span></li>
           {{-- start payroll manage --}}
-          <li data-toggle="collapse" data-target="#li-col-0" aria-expanded="false" class="list-group-item li-group-dropdown  border-0 bg-light left-menu-item d-flex justify-content-between align-items-center"><span><i class="fa fa-usd" aria-hidden="true"></i> <span class="textt-hide"><span class="textt-hide">&nbsp;&nbsp;Payroll Management</span></span><i class="fa fa-angle-left angle-left" aria-hidden="true"></i></li>
+          <li data-toggle="collapse" data-target="#li-col-0" aria-expanded="false" class="list-group-item li-group-dropdown  border-0 bg-light left-menu-item d-flex justify-content-between align-items-center"><span><i class="fa fa-usd" aria-hidden="true"></i> &nbsp;&nbsp;Payroll Management</span><i class="fa fa-angle-left angle-left" aria-hidden="true"></i></li>
           <div id="li-col-0" class="collapse bg-white">
              <ul class="list-group bg-white textt-hide">
                  <li  data-type="manage_salary" class="list-group-item border-0 bg-light d-flex  justify-content-left align-items-center collapse-item pl-5"><i class="fa fa-dot-circle-o" aria-hidden="true"></i><span> &nbsp;&nbsp;&nbsp;Manage Salary</span></li>
@@ -43,6 +48,7 @@
            <li data-toggle="collapse" data-target="#li-col-1" aria-expanded="false" class="li-group-dropdown list-group-item  border-0 bg-light left-menu-item d-flex justify-content-between align-items-center"><span><i class="fa fa-calendar" aria-hidden="true"></i> <span class="textt-hide">&nbsp;&nbsp;Attendance</span></span><i class="fa fa-angle-left angle-left" aria-hidden="true"></i></li>
          <div id="li-col-1" class="collapse bg-white">
             <ul class="list-group bg-white textt-hide">
+                <li  data-type="make_attendance" class="list-group-item border-0 bg-light d-flex  justify-content-left align-items-center collapse-item pl-5"><i class="fa fa-dot-circle-o" aria-hidden="true"></i><span> &nbsp;&nbsp;&nbsp;Biomatics Attendance</span></li>
                 <li  data-type="make_attendance" class="list-group-item border-0 bg-light d-flex  justify-content-left align-items-center collapse-item pl-5"><i class="fa fa-dot-circle-o" aria-hidden="true"></i><span> &nbsp;&nbsp;&nbsp;Make Attendance</span></li>
                 <li  data-type="import_attendance" class="list-group-item border-0 bg-light d-flex  justify-content-left align-items-center collapse-item pl-5"><i class="fa fa-dot-circle-o" aria-hidden="true"></i><span> &nbsp;&nbsp;&nbsp;Import Attendance</span></li>
                 <li  data-type="make_attendance" class="list-group-item border-0 bg-light d-flex  justify-content-left align-items-center collapse-item pl-5"><i class="fa fa-dot-circle-o" aria-hidden="true"></i><span> &nbsp;&nbsp;&nbsp;Attendance Sheet</span></li>
@@ -97,8 +103,8 @@
    </ul>        
 </div>
 {{-- start profile, change password and logout --}}
-<li class="list-group-item  border-0 bg-light left-menu-item d-flex justify-content-between align-items-left"><span><i class="fa fa-cog" aria-hidden="true"></i> <span class="textt-hide">&nbsp;&nbsp;Setting</span></span></li>
 <li class="list-group-item  border-0 bg-light left-menu-item d-flex justify-content-between align-items-left"><span><i class="fa fa-user" aria-hidden="true"></i> <span class="textt-hide">&nbsp;&nbsp;Profile</span></span></li>
+<li class="list-group-item  border-0 bg-light left-menu-item d-flex justify-content-between align-items-left"><span><i class="fa fa-cog" aria-hidden="true"></i> <span class="textt-hide">&nbsp;&nbsp;Setting</span></span></li>
 <li class="list-group-item  border-0 bg-light left-menu-item d-flex justify-content-between align-items-left"><span><i class="fa fa-key" aria-hidden="true"></i> <span class="textt-hide">&nbsp;&nbsp;Change Password</span></span></li>
 <li class="list-group-item  border-0 bg-light left-menu-item d-flex justify-content-between align-items-left"><span><i class="fa fa-lock" aria-hidden="true"></i> <span class="textt-hide">&nbsp;&nbsp;Logout</span></span></li>
           

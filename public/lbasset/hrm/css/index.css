@@ -5,7 +5,7 @@
   background-color: red;
 }
 .left-side{
-    width:250px;
+    width:260px;
     min-height:100vh;
     background-color: white;
     position: absolute;
@@ -14,7 +14,7 @@
     left:0px;
 }
 .right-side{
-    width: calc(100% - 250px);
+    width: calc(100% - 260px);
     min-height:100vh;
     background-color:#00092b;
     position: absolute;
@@ -41,5 +41,8 @@
   bottom: 10px;
   right:10px;
   background-color: #CB3300;
+  cursor: pointer;
+}
+.left-icon{
   cursor: pointer;
 }

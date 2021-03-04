@@ -22,7 +22,7 @@ $(document).ready(function(){
     }
     else{
       $(this).attr("lbaction","full");
-      $(".right-side").css({width: 'calc(100% - 250px)'});
+      $(".right-side").css({width: 'calc(100% - 260px)'});
     }
   });
   // start full screen code

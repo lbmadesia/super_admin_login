@@ -27,7 +27,7 @@
         <script src="{{ asset('js/app.js') }}"></script>
        @yield('script')
     </head>
-    <body>
+    <body token="{{csrf_token()}}">
      <div class="container-fluid p-0">
          @yield('header')
          @yield('section')
